@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+
+<html lang="ja" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="/static/CSS.css">
+    <title>Ticket-Search</title>
+</head>
+<body>
+    <div class= "header">
+        <h1>Ticket-Search</h1>
+    </div>
+        
+    <div class="content">
+           
+           <div class="search-bar">
+                <form action="/program/" method="post" class="kensaku">
+                    <p>検索したいキーワードを入力してください。</p>
+                {% csrf_token %}
+                    <input type="search" name="search" class="search" placeholder="キーワードを入力">
+                    <input type="submit" name="submit" class ="submit" value="検索">
+                </form>
+           </div>
+
+           <div class="search-result">
+                <h1>検索結果</h1>
+               
+               <div>
+                {% for t in datas%}
+                <div class="mini-table">
+                    <p>{{t.info}}</p>
+                    <p>{{t.name}}</p>
+                    <a href="https://www.google.com/maps/place/{{t.venue}}">{{t.venue}}</a>
+                </div>
+                {% endfor %}
+                </div>
+
+           </div>
+        </div>
+    <div class="footer"></div>
+</body>
+</html>
