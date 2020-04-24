@@ -1,7 +1,7 @@
 # ticket-search
 
 ## どんなアプリ？
- <img src = "ticket-search.png" height = 200px>  
+ <img src = "ticket-search.png" height = 500px>  
  検索バーに入力すると  
  複数のチケットサイトから  
  入力したキーワードに関するイベントをスクレイピングするWebアプリです。  
